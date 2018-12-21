@@ -1,12 +1,12 @@
 Ce fichier contient les infos essentielles à la compréhension du kernel ALMOS-MKH.
 
-##La procédure du boot
+## La procédure du boot
 
 Elle se compose de phases :
 	- La phase dépendante de l'architecture qui est implémenté par une procédure boot_loader spécifique à une architecture.
 	- La phase indépendante de l'architecture qui est implémenté par une procédure kernel_init générique.
 
-#La procédure boot_loader
+# La procédure boot_loader
 
 La tâche principale de cette procédure est d'instancier dans chacun des clusters, une copie local du code kernel d'ALMOS-MKH.
 Ce code contient une description de l'architecture hardware, contenue dans la structure de données boot_info_t qui est de taille fixe. C'est le boot loader qui construit cette structure et qui la place au début de la copie local placé dans le segment kdata. Etant utilisé par la fonction kernel_init, cette structure doit être le premier object du segment kdata.
